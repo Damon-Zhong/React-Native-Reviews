@@ -1,12 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as Font from 'expo-font'
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo'
 import Home from './components/Home'
 
+const getFonts = async () => {
+  return await Font.loadAsync({
+    'DoHyeon' : require('./assets/fonts/DoHyeon-Regular.ttf')
+  })
+}
+
+
 export default function App() {
-  return (
-    <Home />
-  );
+  const [pageLoad, setPageLoad] = useState(false)
+
+  if(pageLoad){
+    return (
+      <Home />
+    )
+  }else{
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setPageLoad(true)}
+      />
+    )
+  }
 }
 
 const styles = StyleSheet.create({
