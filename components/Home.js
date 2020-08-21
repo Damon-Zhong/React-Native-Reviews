@@ -1,9 +1,16 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { globalStyle } from '../assets/globalStyle'
+import { View, Text, Button } from 'react-native'
+import { globalStyles } from '../assets/globalStyle'
 
-export default function Home(){
-    <View style={globalStyle.container}>
-        <Text style={globalStyle.titleText}>Home Page</Text>
-    </View>
+export default function Home({navigation}){
+
+    const pressHandler = () => {
+        navigation.navigate('ReviewDetails')
+    }
+    return (
+        <View style={globalStyles.container}>
+            <Text style={globalStyles.titleText}>Home Page</Text>
+            <Button title='Check Reviews' onPress={pressHandler} />
+        </View>
+    )
 }

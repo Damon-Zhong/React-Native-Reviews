@@ -1,9 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { globalStyle } from '../assets/globalStyle'
+import { globalStyles } from '../assets/globalStyle'
 
 export default function ReviewDetail(){
-    <View style={globalStyle.container}>
-        <Text>ReviewDetail Page</Text>
-    </View>
+    return (
+        <View style={globalStyles.container}>
+            <Text>ReviewDetail Page</Text>
+        </View>
+    )
+    
 }

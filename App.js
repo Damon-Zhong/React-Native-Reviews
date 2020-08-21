@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AppLoading } from 'expo'
 import Home from './components/Home'
+import Routers from './routes/homeStack'
 
 const getFonts = async () => {
   return await Font.loadAsync({
@@ -16,7 +17,7 @@ export default function App() {
 
   if(pageLoad){
     return (
-      <Home />
+      <Routers />
     )
   }else{
     return (
