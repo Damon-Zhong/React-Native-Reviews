@@ -2,8 +2,9 @@ import * as Font from 'expo-font'
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AppLoading } from 'expo'
-import Home from './components/Home'
-import Routers from './routes/homeStack'
+// import Home from './components/Home'
+// import Routers from './routes/homeStack'
+import Routers from './routes/drawer'
 
 const getFonts = async () => {
   return await Font.loadAsync({
