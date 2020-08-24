@@ -1,7 +1,9 @@
+import React from 'react'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
 import HomePage from '../components/Home'
 import ReviewDetailPage from '../components/reviewDetails'
+import Header from '../shared/header'
 
 // const Stack = createStackNavigator()
 
@@ -32,11 +34,14 @@ import ReviewDetailPage from '../components/reviewDetails'
 const screens = {
     HomePage: {
         screen: HomePage,
-        navigationOptions: {
-            title: 'Home Page',
-            headerStyle: {
-                backgroundColor: 'coral'
+        navigationOptions: ({ navigation }) => {
+            return{
+                header: () => <Header navigation={navigation} title='Home Page'/>
             }
+            // title: 'Home Page',
+            // headerStyle: {
+            //     backgroundColor: 'coral'
+            // }
         }
     },
     ReviewDetails: {

@@ -1,6 +1,6 @@
+import React from 'react'
 import { createStackNavigator } from 'react-navigation-stack'
-// import { createAppContainer } from 'react-navigation'
-// import HomePage from '../components/Home'
+import Header from '../shared/header'
 import About from '../components/About'
 
 const screens = {
@@ -15,8 +15,11 @@ const screens = {
     // },
     About: {
         screen: About,
-        navigationOptions: {
-            title: 'About Page'
+        navigationOptions: ({ navigation }) => {
+            return{
+                header: () => <Header navigation={navigation} title='About Page' />
+            }
+            // title: 'About Page'
         }
     }
 }

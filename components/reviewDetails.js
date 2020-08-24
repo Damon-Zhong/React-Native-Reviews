@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
-import { globalStyles } from '../assets/globalStyle'
+import { View, Text, Button, Image } from 'react-native'
+import { globalStyles, images } from '../assets/globalStyle'
+import Card from '../shared/card'
 
 export default function ReviewDetail({ navigation }){
 
@@ -8,13 +9,20 @@ export default function ReviewDetail({ navigation }){
         navigation.goBack()
     }
 
+    const rating = navigation.getParam('rating')
+
     return (
         <View style={globalStyles.container}>
-            <Text>{navigation.getParam('title')}</Text>
-            <Text>{navigation.getParam('body')}</Text>
-            <Text>{navigation.getParam('rating')}</Text>
-            <Button title='Back to Home' onPress={pressHandler} />
+            <Card>
+                <Text>{navigation.getParam('title')}</Text>
+                <Text>{navigation.getParam('body')}</Text>
+                <View style={globalStyles.rating}>
+                    <Text>Game Rating: </Text>
+                    {/* <Text>{navigation.getParam('rating')}</Text> */}
+                    <Image source={images.ratings[rating]} />
+                    {/* <Button title='Back to Home' onPress={pressHandler} /> */}
+                </View>
+            </Card>
         </View>
     )
-    
 }
